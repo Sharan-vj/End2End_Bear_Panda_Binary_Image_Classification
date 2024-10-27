@@ -1,0 +1,25 @@
+artifacts_root: artifacts
+
+data_ingestion: 
+  root_dir: artifacts/data_ingestion
+  dataset_url: https://drive.google.com/file/d/1sClWs8w9suWqsLxHV5grzKd8aB5dp5oE/view?usp=sharing
+  dataset_raw: artifacts/data_ingestion/data.zip
+
+
+data_validation:
+  root_dir: artifacts/data_validation
+  dataset_path: artifacts/data_ingestion/pandas_bears
+  status_file: artifacts/data_validation/status.txt
+
+
+base_model:
+  root_dir: artifacts/base_model_prep
+  base_model: artifacts/base_model_prep/base_model.h5
+  model_save: models/base_model.h5
+
+
+model_finetune:
+  root_dir: artifacts/model_finetuning
+  base_model: artifacts/base_model_prep/base_model.h5
+  model_weights: models/model.weights.h5
+  train_data: artifacts/data_ingestion/pandas_bears/train
